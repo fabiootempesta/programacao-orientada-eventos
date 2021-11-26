@@ -1,0 +1,72 @@
+object Form1: TForm1
+  Left = 257
+  Height = 240
+  Top = 250
+  Width = 360
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 360
+  OnCreate = FormCreate
+  object MemoLinhas: TMemo
+    Left = 24
+    Height = 90
+    Top = 16
+    Width = 150
+    Lines.Strings = (
+      'MemoLinhas'
+    )
+    TabOrder = 0
+  end
+  object EditPalavra: TEdit
+    Left = 24
+    Height = 23
+    Top = 121
+    Width = 150
+    TabOrder = 1
+  end
+  object ButtonAddF: TButton
+    Left = 184
+    Height = 25
+    Top = 120
+    Width = 128
+    Caption = 'Adicionar no final'
+    OnClick = ButtonAddFClick
+    TabOrder = 2
+  end
+  object ButtonAddI: TButton
+    Left = 184
+    Height = 25
+    Top = 152
+    Width = 128
+    Caption = 'Inserir no início'
+    OnClick = ButtonAddIClick
+    TabOrder = 3
+  end
+  object ButtonVerificar: TButton
+    Left = 184
+    Height = 25
+    Top = 184
+    Width = 128
+    Caption = 'Verificar presença'
+    OnClick = ButtonVerificarClick
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 184
+    Height = 25
+    Top = 16
+    Width = 128
+    Caption = 'Limpar MemoLinhas'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 184
+    Height = 25
+    Top = 48
+    Width = 128
+    Caption = 'Numero de linhas'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+end

@@ -1,0 +1,62 @@
+object Form1: TForm1
+  Left = 257
+  Height = 240
+  Top = 250
+  Width = 442
+  Caption = 'Listas'
+  ClientHeight = 240
+  ClientWidth = 442
+  OnActivate = FormActivate
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 216
+    Top = 8
+    Width = 185
+    Caption = 'Lista1'
+    ClientHeight = 196
+    ClientWidth = 181
+    TabOrder = 0
+    object ListBox1: TListBox
+      Left = 0
+      Height = 192
+      Top = 0
+      Width = 176
+      ItemHeight = 0
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 240
+    Height = 216
+    Top = 8
+    Width = 185
+    Caption = 'Lista2'
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 208
+    Height = 25
+    Top = 64
+    Width = 24
+    Caption = '>'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 208
+    Height = 25
+    Top = 144
+    Width = 24
+    Caption = '<'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object ListBox2: TListBox
+    Left = 248
+    Height = 192
+    Top = 24
+    Width = 172
+    ItemHeight = 0
+    TabOrder = 4
+  end
+end
