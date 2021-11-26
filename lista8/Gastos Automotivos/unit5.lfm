@@ -1,0 +1,109 @@
+object FormCadItem: TFormCadItem
+  Left = 391
+  Height = 162
+  Top = 250
+  Width = 439
+  Caption = 'Cadastro de itens'
+  ClientHeight = 162
+  ClientWidth = 439
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 137
+    Width = 439
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 439
+    DataSource = DataModule1.DataSourceItem
+    Options = []
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 40
+    Width = 82
+    Caption = 'ID da categoria:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 79
+    Width = 77
+    Caption = 'Denominação:'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 8
+    Width = 80
+    DataField = 'id_item'
+    DataSource = DataModule1.DataSourceItem
+    ReadOnly = True
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 79
+    Width = 320
+    DataField = 'den_item'
+    DataSource = DataModule1.DataSourceItem
+    CharCase = ecNormal
+    MaxLength = 30
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 58
+    Caption = 'ID do Item:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 120
+    Width = 47
+    Caption = 'Unidade:'
+    ParentColor = False
+  end
+  object DBEdit3: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 112
+    Width = 32
+    DataField = 'unidade'
+    DataSource = DataModule1.DataSourceItem
+    CharCase = ecNormal
+    MaxLength = 2
+    TabOrder = 3
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 104
+    Height = 23
+    Top = 40
+    Width = 100
+    DataField = 'id_categoria'
+    DataSource = DataModule1.DataSourceItem
+    KeyField = 'id_categoria'
+    ListField = 'id_categoria'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceCategoria
+    LookupCache = False
+    TabOrder = 4
+  end
+end

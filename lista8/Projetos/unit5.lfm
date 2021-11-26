@@ -1,0 +1,89 @@
+object FormProjeto: TFormProjeto
+  Left = 291
+  Height = 159
+  Top = 250
+  Width = 398
+  Caption = 'Projeto'
+  ClientHeight = 159
+  ClientWidth = 398
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 134
+    Width = 398
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 398
+    DataSource = DataModule1.DataSourceProj
+    Options = []
+    TabOrder = 0
+  end
+  object DBEdit1: TDBEdit
+    Left = 96
+    Height = 23
+    Top = 0
+    Width = 80
+    DataField = 'id_projeto'
+    DataSource = DataModule1.DataSourceProj
+    ReadOnly = True
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 96
+    Height = 23
+    Top = 48
+    Width = 288
+    DataField = 'descricao_projeto'
+    DataSource = DataModule1.DataSourceProj
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 0
+    Height = 15
+    Top = 0
+    Width = 17
+    Caption = 'ID :'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 0
+    Height = 15
+    Top = 48
+    Width = 51
+    Caption = 'Descrição'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 0
+    Height = 15
+    Top = 103
+    Width = 95
+    Caption = 'ID do funcionário:'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 96
+    Height = 23
+    Top = 96
+    Width = 100
+    DataField = 'id_funcionario_supervisor'
+    DataSource = DataModule1.DataSourceProj
+    KeyField = 'id_funcionario'
+    ListField = 'id_funcionario'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceFunc
+    LookupCache = False
+    TabOrder = 3
+  end
+end

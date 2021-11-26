@@ -1,0 +1,123 @@
+object FormCadCategoria: TFormCadCategoria
+  Left = 391
+  Height = 282
+  Top = 250
+  Width = 398
+  Caption = 'Cadastro de Categorias'
+  ClientHeight = 282
+  ClientWidth = 398
+  LCLVersion = '2.0.10.0'
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 81
+    Width = 398
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 398
+    DataSource = DataModule1.DataSourceCategoria
+    Options = []
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 79
+    Caption = 'ID da categoria'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 47
+    Width = 77
+    Caption = 'Denominação:'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 8
+    Width = 80
+    DataField = 'id_categoria'
+    DataSource = DataModule1.DataSourceCategoria
+    ReadOnly = True
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 47
+    Width = 280
+    DataField = 'den_categoria'
+    DataSource = DataModule1.DataSourceCategoria
+    CharCase = ecNormal
+    MaxLength = 30
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 162
+    Top = 120
+    Width = 398
+    Align = alBottom
+    Caption = 'Itens'
+    ClientHeight = 142
+    ClientWidth = 394
+    TabOrder = 3
+    object DBGrid1: TDBGrid
+      Left = 0
+      Height = 142
+      Top = 0
+      Width = 352
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'ID'
+          FieldName = 'id_item'
+        end      
+        item
+          Title.Caption = 'Denominação'
+          Width = 150
+          FieldName = 'den_item'
+        end      
+        item
+          Title.Caption = 'Unidade'
+          FieldName = 'unidade'
+        end>
+      DataSource = DataModule1.DataSourceItem
+      TabOrder = 0
+    end
+    object DBNavigator2: TDBNavigator
+      Left = 352
+      Height = 142
+      Top = 0
+      Width = 42
+      Align = alRight
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclTopToBottomThenLeftToRight
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 142
+      ClientWidth = 42
+      DataSource = DataModule1.DataSourceItem
+      Direction = nbdVertical
+      Options = []
+      TabOrder = 1
+    end
+  end
+end

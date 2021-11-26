@@ -1,0 +1,45 @@
+object FormPrincipal: TFormPrincipal
+  Left = 291
+  Height = 168
+  Top = 250
+  Width = 237
+  Caption = 'Projetos'
+  ClientHeight = 168
+  ClientWidth = 237
+  object Button1: TButton
+    Left = 16
+    Height = 25
+    Top = 8
+    Width = 203
+    Caption = 'Funcionários'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 16
+    Height = 25
+    Top = 48
+    Width = 203
+    Caption = 'Departamentos'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 16
+    Height = 25
+    Top = 88
+    Width = 203
+    Caption = 'Projetos'
+    OnClick = Button3Click
+    TabOrder = 2
+  end
+  object Button5: TButton
+    Left = 16
+    Height = 25
+    Top = 128
+    Width = 203
+    Caption = 'Consultas'
+    OnClick = Button5Click
+    TabOrder = 3
+  end
+end

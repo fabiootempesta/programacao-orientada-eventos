@@ -1,0 +1,87 @@
+object FormCadCarro: TFormCadCarro
+  Left = 391
+  Height = 145
+  Top = 250
+  Width = 392
+  Caption = 'Cadastro de Carros'
+  ClientHeight = 145
+  ClientWidth = 392
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 120
+    Width = 392
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 392
+    DataSource = DataModule1.DataSourceCarro
+    Options = []
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 61
+    Caption = 'ID do carro:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 47
+    Width = 31
+    Caption = 'Placa:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 88
+    Width = 77
+    Caption = 'Denominação:'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 8
+    Width = 80
+    DataField = 'id_carro'
+    DataSource = DataModule1.DataSourceCarro
+    ReadOnly = True
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 47
+    Width = 104
+    DataField = 'placa'
+    DataSource = DataModule1.DataSourceCarro
+    CharCase = ecNormal
+    MaxLength = 7
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 88
+    Width = 272
+    DataField = 'den_carro'
+    DataSource = DataModule1.DataSourceCarro
+    CharCase = ecNormal
+    MaxLength = 30
+    TabOrder = 3
+  end
+end

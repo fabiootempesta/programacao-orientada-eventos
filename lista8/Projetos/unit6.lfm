@@ -1,0 +1,92 @@
+object FormProjFunc: TFormProjFunc
+  Left = 291
+  Height = 134
+  Top = 250
+  Width = 249
+  Caption = 'Projeto do Funcionário'
+  ClientHeight = 134
+  ClientWidth = 249
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 109
+    Width = 249
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 249
+    DataSource = DataModule1.DataSourceProjFunc
+    Options = []
+    TabOrder = 0
+  end
+  object Label5: TLabel
+    Left = 0
+    Height = 15
+    Top = 15
+    Width = 66
+    Caption = 'Funcionário:'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 96
+    Height = 23
+    Top = 7
+    Width = 100
+    DataField = 'id_funcionario'
+    DataSource = DataModule1.DataSourceProjFunc
+    KeyField = 'id_funcionario'
+    ListField = 'id_funcionario'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceFunc
+    LookupCache = False
+    TabOrder = 1
+  end
+  object Label6: TLabel
+    Left = 0
+    Height = 15
+    Top = 55
+    Width = 41
+    Caption = 'Projeto:'
+    ParentColor = False
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 96
+    Height = 23
+    Top = 47
+    Width = 100
+    DataField = 'id_projeto'
+    DataSource = DataModule1.DataSourceProjFunc
+    KeyField = 'id_projeto'
+    ListField = 'id_projeto'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceProj
+    LookupCache = False
+    TabOrder = 2
+  end
+  object DBEdit4: TDBEdit
+    Left = 96
+    Height = 23
+    Top = 80
+    Width = 120
+    DataField = 'horas_trabalhadas'
+    DataSource = DataModule1.DataSourceProjFunc
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 0
+    Height = 15
+    Top = 88
+    Width = 98
+    Caption = 'Horas trabalhadas:'
+    ParentColor = False
+  end
+end

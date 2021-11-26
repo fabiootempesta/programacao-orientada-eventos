@@ -1,0 +1,55 @@
+object FormPrincipal: TFormPrincipal
+  Left = 313
+  Height = 202
+  Top = 250
+  Width = 304
+  Caption = 'Acadêmico - Formulário Principal'
+  ClientHeight = 202
+  ClientWidth = 304
+  Position = poScreenCenter
+  object Button1: TButton
+    Left = 88
+    Height = 24
+    Top = 16
+    Width = 128
+    Caption = 'Aluno'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 88
+    Height = 24
+    Top = 54
+    Width = 128
+    Caption = 'Professor'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 88
+    Height = 24
+    Top = 92
+    Width = 128
+    Caption = 'Disciplina'
+    OnClick = Button3Click
+    TabOrder = 2
+  end
+  object Button4: TButton
+    Left = 88
+    Height = 24
+    Top = 128
+    Width = 128
+    Caption = 'Lançamento de nota'
+    OnClick = Button4Click
+    TabOrder = 3
+  end
+  object Button5: TButton
+    Left = 88
+    Height = 25
+    Top = 160
+    Width = 128
+    Caption = 'Consultas'
+    OnClick = Button5Click
+    TabOrder = 4
+  end
+end

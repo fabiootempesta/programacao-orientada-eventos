@@ -1,0 +1,82 @@
+object DataModule1: TDataModule1
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 315
+  HorizontalOffset = 391
+  VerticalOffset = 250
+  Width = 650
+  object ZTableCategoria: TZTable
+    Connection = ZConnection1
+    TableName = 'categoria'
+    Left = 203
+    Top = 24
+  end
+  object ZTableCarro: TZTable
+    Connection = ZConnection1
+    TableName = 'carro'
+    Left = 307
+    Top = 24
+  end
+  object ZTableItem: TZTable
+    Connection = ZConnection1
+    TableName = 'item'
+    MasterFields = 'id_categoria'
+    MasterSource = DataSourceCategoria
+    LinkedFields = 'id_categoria'
+    Left = 411
+    Top = 24
+  end
+  object ZTableGasto: TZTable
+    Connection = ZConnection1
+    TableName = 'gasto'
+    Left = 515
+    Top = 24
+  end
+  object DataSourceCategoria: TDataSource
+    AutoEdit = False
+    DataSet = ZTableCategoria
+    Left = 200
+    Top = 123
+  end
+  object DataSourceCarro: TDataSource
+    AutoEdit = False
+    DataSet = ZTableCarro
+    Left = 307
+    Top = 123
+  end
+  object DataSourceItem: TDataSource
+    AutoEdit = False
+    DataSet = ZTableItem
+    Left = 411
+    Top = 123
+  end
+  object DataSourceGasto: TDataSource
+    AutoEdit = False
+    DataSet = ZTableGasto
+    Left = 515
+    Top = 123
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Port = 0
+    Protocol = 'sqlite-3'
+    Left = 24
+    Top = 24
+  end
+  object ZQueryConsulta: TZReadOnlyQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 104
+    Top = 24
+  end
+  object SourceConsulta: TDataSource
+    DataSet = ZQueryConsulta
+    Left = 104
+    Top = 123
+  end
+end

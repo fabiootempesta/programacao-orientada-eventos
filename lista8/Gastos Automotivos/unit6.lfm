@@ -1,0 +1,204 @@
+object FormCadGasto: TFormCadGasto
+  Left = 391
+  Height = 291
+  Top = 250
+  Width = 232
+  Caption = 'Lançar Gastos'
+  ClientHeight = 291
+  ClientWidth = 232
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 266
+    Width = 232
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 232
+    DataSource = DataModule1.DataSourceGasto
+    Options = []
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 72
+    Width = 82
+    Caption = 'ID da categoria:'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 112
+    Height = 23
+    Top = 72
+    Width = 100
+    DataField = 'id_item'
+    DataSource = DataModule1.DataSourceGasto
+    KeyField = 'id_categoria'
+    ListField = 'id_categoria'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceCategoria
+    LookupCache = False
+    TabOrder = 3
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 15
+    Top = 40
+    Width = 61
+    Caption = 'ID do carro:'
+    ParentColor = False
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 112
+    Height = 23
+    Top = 40
+    Width = 100
+    DataField = 'id_carro'
+    DataSource = DataModule1.DataSourceGasto
+    KeyField = 'id_carro'
+    ListField = 'id_carro'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceCarro
+    LookupCache = False
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 15
+    Top = 8
+    Width = 63
+    Caption = 'ID do gasto:'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 112
+    Height = 23
+    Top = 8
+    Width = 80
+    DataField = 'id_gasto'
+    DataSource = DataModule1.DataSourceGasto
+    ReadOnly = True
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 15
+    Top = 104
+    Width = 27
+    Caption = 'Data:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 15
+    Top = 136
+    Width = 21
+    Caption = 'Km:'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 16
+    Height = 15
+    Top = 164
+    Width = 65
+    Caption = 'Quantidade:'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 16
+    Height = 15
+    Top = 200
+    Width = 73
+    Caption = 'Valor unitário:'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 16
+    Height = 15
+    Top = 232
+    Width = 56
+    Caption = 'Valor total:'
+    ParentColor = False
+  end
+  object DBEdit3: TDBEdit
+    Left = 112
+    Height = 23
+    Top = 136
+    Width = 80
+    DataField = 'km'
+    DataSource = DataModule1.DataSourceGasto
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object DBEdit4: TDBEdit
+    Left = 112
+    Height = 23
+    Top = 164
+    Width = 80
+    DataField = 'quantidade'
+    DataSource = DataModule1.DataSourceGasto
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object DBEdit5: TDBEdit
+    Left = 112
+    Height = 23
+    Top = 200
+    Width = 80
+    DataField = 'valor_unitario'
+    DataSource = DataModule1.DataSourceGasto
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object DBEdit6: TDBEdit
+    Left = 112
+    Height = 23
+    Top = 232
+    Width = 80
+    DataField = 'valor_total'
+    DataSource = DataModule1.DataSourceGasto
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object DBDateTimePicker1: TDBDateTimePicker
+    Left = 112
+    Height = 23
+    Top = 104
+    Width = 83
+    DataField = 'data'
+    DataSource = DataModule1.DataSourceGasto
+    ReadOnly = False
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 4
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+end

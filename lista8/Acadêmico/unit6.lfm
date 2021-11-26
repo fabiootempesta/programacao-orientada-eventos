@@ -1,0 +1,104 @@
+object FormLancamentoNota: TFormLancamentoNota
+  Left = 391
+  Height = 259
+  Top = 250
+  Width = 356
+  Caption = 'Lançar nota'
+  ClientHeight = 259
+  ClientWidth = 356
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 81
+    Caption = 'ID da Disciplina'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 40
+    Width = 166
+    Caption = 'Número da matrícula do aluno:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 72
+    Width = 29
+    Caption = 'Nota:'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 208
+    Height = 23
+    Top = 72
+    Width = 80
+    DataField = 'nota'
+    DataSource = tDataPrincipal.SourceDisciplina_Aluno
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 208
+    Height = 23
+    Top = 8
+    Width = 100
+    DataField = 'id_disciplina'
+    DataSource = tDataPrincipal.SourceDisciplina_Aluno
+    KeyField = 'id_disciplina'
+    ListField = 'id_disciplina'
+    ListFieldIndex = 0
+    ListSource = tDataPrincipal.SourceDisciplina
+    LookupCache = False
+    TabOrder = 1
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 208
+    Height = 23
+    Top = 40
+    Width = 100
+    DataField = 'matricula_aluno'
+    DataSource = tDataPrincipal.SourceDisciplina_Aluno
+    KeyField = 'matricula_aluno'
+    ListField = 'matricula_aluno'
+    ListFieldIndex = 0
+    ListSource = tDataPrincipal.SourceAluno
+    LookupCache = False
+    TabOrder = 2
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 127
+    Width = 356
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 356
+    DataSource = tDataPrincipal.SourceDisciplina_Aluno
+    OnClick = DBNavigator1Click
+    Options = []
+    TabOrder = 3
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 107
+    Top = 152
+    Width = 356
+    Align = alBottom
+    Color = clWindow
+    Columns = <>
+    DataSource = tDataPrincipal.SourceAluno
+    TabOrder = 4
+  end
+end

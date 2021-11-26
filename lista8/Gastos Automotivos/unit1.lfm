@@ -1,0 +1,45 @@
+object FormPrincipal: TFormPrincipal
+  Left = 391
+  Height = 188
+  Top = 250
+  Width = 290
+  Caption = 'Gastos Automotivos'
+  ClientHeight = 188
+  ClientWidth = 290
+  object Button1: TButton
+    Left = 64
+    Height = 25
+    Top = 8
+    Width = 168
+    Caption = 'Cadastro de carro'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 64
+    Height = 25
+    Top = 56
+    Width = 168
+    Caption = 'Cadastro de categoria e itens'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button4: TButton
+    Left = 64
+    Height = 25
+    Top = 104
+    Width = 168
+    Caption = 'Cadastro de gasto'
+    OnClick = Button4Click
+    TabOrder = 2
+  end
+  object Button5: TButton
+    Left = 64
+    Height = 25
+    Top = 152
+    Width = 168
+    Caption = 'Consultas'
+    OnClick = Button5Click
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,125 @@
+object FormCadProf: TFormCadProf
+  Left = 391
+  Height = 272
+  Top = 250
+  Width = 492
+  Caption = 'Cadastro de Professores'
+  ClientHeight = 272
+  ClientWidth = 492
+  OnActivate = FormActivate
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 100
+    Caption = 'Numero Matricula:'
+    FocusControl = DBEditNumMatriculaProfessor
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 40
+    Width = 92
+    Caption = 'Nome Completo:'
+    FocusControl = DBEditNomeProf
+    ParentColor = False
+  end
+  object DBEditNomeProf: TDBEdit
+    Left = 136
+    Height = 23
+    Top = 40
+    Width = 328
+    DataField = 'nome_professor'
+    DataSource = tDataPrincipal.SourceProfessor
+    CharCase = ecNormal
+    MaxLength = 80
+    TabOrder = 0
+  end
+  object DBEditNumMatriculaProfessor: TDBEdit
+    Left = 136
+    Height = 23
+    Top = 8
+    Width = 80
+    DataField = 'id_professor'
+    DataSource = tDataPrincipal.SourceProfessor
+    ReadOnly = True
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 40
+    TabOrder = 1
+  end
+  object DBEditAreaProf: TDBEdit
+    Left = 136
+    Height = 23
+    Top = 72
+    Width = 328
+    DataField = 'area'
+    DataSource = tDataPrincipal.SourceProfessor
+    CharCase = ecNormal
+    MaxLength = 40
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 72
+    Width = 27
+    Caption = 'Área:'
+    ParentColor = False
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 103
+    Width = 492
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 492
+    DataSource = tDataPrincipal.SourceProfessor
+    OnClick = DBNavigator1Click
+    Options = []
+    TabOrder = 3
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 144
+    Top = 128
+    Width = 492
+    Align = alBottom
+    Caption = 'Disciplinas ministradas'
+    ClientHeight = 124
+    ClientWidth = 488
+    TabOrder = 4
+    object DBGrid1: TDBGrid
+      Left = 0
+      Height = 124
+      Top = 0
+      Width = 488
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'ID da Disciplina'
+          Width = 100
+        end      
+        item
+          Title.Caption = 'Descrição'
+          Width = 200
+        end      
+        item
+          Title.Caption = 'Carga horária'
+          Width = 100
+        end>
+      DataSource = tDataPrincipal.SourceConsulta
+      TabOrder = 0
+    end
+  end
+end

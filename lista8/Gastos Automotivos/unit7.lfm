@@ -1,0 +1,165 @@
+object FormConsultas: TFormConsultas
+  Left = -8
+  Height = 719
+  Top = -8
+  Width = 779
+  Caption = 'Consultas'
+  ClientHeight = 810
+  ClientWidth = 1163
+  WindowState = wsMaximized
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 810
+    Top = 0
+    Width = 1163
+    Align = alClient
+    ClientHeight = 790
+    ClientWidth = 1159
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 0
+      Height = 454
+      Top = 336
+      Width = 1159
+      Align = alBottom
+      Color = clWindow
+      Columns = <>
+      DataSource = DataModule1.SourceConsulta
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 16
+      Height = 28
+      Top = 0
+      Width = 288
+      Caption = 'Consultar denominação de carro:'
+      Font.Height = -20
+      ParentColor = False
+      ParentFont = False
+    end
+    object EditNomeCarro: TEdit
+      Left = 320
+      Height = 23
+      Top = 5
+      Width = 240
+      OnChange = EditNomeCarroChange
+      TabOrder = 1
+      Text = 'Denominação do carro'
+    end
+    object Button1: TButton
+      Left = 584
+      Height = 25
+      Top = 3
+      Width = 75
+      Caption = 'Consultar'
+      OnClick = Button1Click
+      TabOrder = 2
+    end
+    object DateFim: TDateTimePicker
+      Left = 384
+      Height = 23
+      Top = 73
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 3
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44173
+      Time = 0.795547430556326
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object DateInicio: TDateTimePicker
+      Left = 384
+      Height = 23
+      Top = 44
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 4
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44173
+      Time = 0.795370393519988
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label6: TLabel
+      Left = 320
+      Height = 15
+      Top = 52
+      Width = 32
+      Caption = 'Início:'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 320
+      Height = 15
+      Top = 81
+      Width = 28
+      Caption = 'Final:'
+      ParentColor = False
+    end
+    object Button4: TButton
+      Left = 584
+      Height = 25
+      Top = 56
+      Width = 75
+      Caption = 'Consultar'
+      OnClick = Button4Click
+      TabOrder = 5
+    end
+    object Label8: TLabel
+      Left = 16
+      Height = 56
+      Top = 40
+      Width = 269
+      Caption = 'Consultar gasto por data início'#13#10'e fim:'
+      Font.Height = -20
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 28
+      Top = 104
+      Width = 199
+      Caption = 'Consultar item pelo ID:'
+      Font.Height = -20
+      ParentColor = False
+      ParentFont = False
+    end
+    object EditIDItem: TEdit
+      Left = 320
+      Height = 23
+      Top = 109
+      Width = 240
+      TabOrder = 6
+      Text = 'ID do item'
+    end
+    object Button3: TButton
+      Left = 584
+      Height = 25
+      Top = 107
+      Width = 75
+      Caption = 'Consultar'
+      OnClick = Button3Click
+      TabOrder = 7
+    end
+  end
+end

@@ -1,0 +1,315 @@
+object tDataPrincipal: TtDataPrincipal
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 258
+  HorizontalOffset = 0
+  VerticalOffset = 0
+  Width = 633
+  object ZConPrincipal: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    DesignConnection = True
+    Port = 0
+    Protocol = 'sqlite-3'
+    Left = 8
+    Top = 48
+  end
+  object ZQueryAluno: TZQuery
+    Connection = ZConPrincipal
+    UpdateObject = ZUpdateAluno
+    SQL.Strings = (
+      'SELECT*FROM aluno'
+    )
+    Params = <>
+    Left = 216
+    Top = 48
+  end
+  object ZUpdateAluno: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM aluno'
+      'WHERE'
+      '  ((aluno.matricula_aluno IS NULL AND :OLD_matricula_aluno IS NULL) OR (aluno.matricula_aluno = :OLD_matricula_aluno))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO aluno'
+      '  (matricula_aluno, nome_aluno, sexo, data_nascimento, media)'
+      'VALUES'
+      '  (:matricula_aluno, :nome_aluno, :sexo, :data_nascimento, :media)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE aluno SET'
+      '  matricula_aluno = :matricula_aluno,'
+      '  nome_aluno = :nome_aluno,'
+      '  sexo = :sexo,'
+      '  data_nascimento = :data_nascimento,'
+      '  media = :media'
+      'WHERE'
+      '  ((aluno.matricula_aluno IS NULL AND :OLD_matricula_aluno IS NULL) OR (aluno.matricula_aluno = :OLD_matricula_aluno))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 216
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'matricula_aluno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome_aluno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'sexo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_nascimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'media'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_matricula_aluno'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQueryProfessor: TZQuery
+    Connection = ZConPrincipal
+    UpdateObject = ZUpdateProfessor
+    SQL.Strings = (
+      'SELECT*FROM professor'
+    )
+    Params = <>
+    Left = 304
+    Top = 48
+  end
+  object ZUpdateProfessor: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM professor'
+      'WHERE'
+      '  ((professor.id_professor IS NULL AND :OLD_id_professor IS NULL) OR (professor.id_professor = :OLD_id_professor))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO professor'
+      '  (id_professor, nome_professor, area)'
+      'VALUES'
+      '  (:id_professor, :nome_professor, :area)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE professor SET'
+      '  id_professor = :id_professor,'
+      '  nome_professor = :nome_professor,'
+      '  area = :area'
+      'WHERE'
+      '  ((professor.id_professor IS NULL AND :OLD_id_professor IS NULL) OR (professor.id_professor = :OLD_id_professor))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 304
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_professor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome_professor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'area'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id_professor'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQueryDisciplina: TZQuery
+    Connection = ZConPrincipal
+    UpdateObject = ZUpdateDisciplina
+    SQL.Strings = (
+      'SELECT*FROM disciplina'
+    )
+    Params = <>
+    Left = 400
+    Top = 48
+  end
+  object ZQueryDisciplina_Aluno: TZQuery
+    Connection = ZConPrincipal
+    UpdateObject = ZUpdateDisciplina_Aluno
+    AfterPost = ZQueryDisciplina_AlunoAfterPost
+    SQL.Strings = (
+      'SELECT*FROM disciplina_aluno'
+    )
+    Params = <>
+    Left = 528
+    Top = 48
+  end
+  object ZUpdateDisciplina: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM disciplina'
+      'WHERE'
+      '  ((disciplina.id_disciplina IS NULL AND :OLD_id_disciplina IS NULL) OR (disciplina.id_disciplina = :OLD_id_disciplina))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO disciplina'
+      '  (id_disciplina, nome_disciplina, carga_horaria, id_professor)'
+      'VALUES'
+      '  (:id_disciplina, :nome_disciplina, :carga_horaria, :id_professor)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE disciplina SET'
+      '  id_disciplina = :id_disciplina,'
+      '  nome_disciplina = :nome_disciplina,'
+      '  carga_horaria = :carga_horaria,'
+      '  id_professor = :id_professor'
+      'WHERE'
+      '  ((disciplina.id_disciplina IS NULL AND :OLD_id_disciplina IS NULL) OR (disciplina.id_disciplina = :OLD_id_disciplina))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 400
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_disciplina'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nome_disciplina'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'carga_horaria'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id_professor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id_disciplina'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZUpdateDisciplina_Aluno: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM disciplina_aluno'
+      'WHERE'
+      '  ((disciplina_aluno.id_disciplina IS NULL AND :OLD_id_disciplina IS NULL) OR (disciplina_aluno.id_disciplina = :OLD_id_disciplina)) AND'
+      '  ((disciplina_aluno.matricula_aluno IS NULL AND :OLD_matricula_aluno IS NULL) OR (disciplina_aluno.matricula_aluno = :OLD_matricula_aluno))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO disciplina_aluno'
+      '  (id_disciplina, matricula_aluno, nota)'
+      'VALUES'
+      '  (:id_disciplina, :matricula_aluno, :nota)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE disciplina_aluno SET'
+      '  id_disciplina = :id_disciplina,'
+      '  matricula_aluno = :matricula_aluno,'
+      '  nota = :nota'
+      'WHERE'
+      '  ((disciplina_aluno.id_disciplina IS NULL AND :OLD_id_disciplina IS NULL) OR (disciplina_aluno.id_disciplina = :OLD_id_disciplina)) AND'
+      '  ((disciplina_aluno.matricula_aluno IS NULL AND :OLD_matricula_aluno IS NULL) OR (disciplina_aluno.matricula_aluno = :OLD_matricula_aluno))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 528
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_disciplina'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'matricula_aluno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nota'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_id_disciplina'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_matricula_aluno'
+        ParamType = ptUnknown
+      end>
+  end
+  object SourceAluno: TDataSource
+    AutoEdit = False
+    DataSet = ZQueryAluno
+    Left = 216
+    Top = 192
+  end
+  object SourceProfessor: TDataSource
+    AutoEdit = False
+    DataSet = ZQueryProfessor
+    Left = 304
+    Top = 192
+  end
+  object SourceDisciplina: TDataSource
+    AutoEdit = False
+    DataSet = ZQueryDisciplina
+    Left = 400
+    Top = 192
+  end
+  object SourceDisciplina_Aluno: TDataSource
+    AutoEdit = False
+    DataSet = ZQueryDisciplina_Aluno
+    Left = 528
+    Top = 192
+  end
+  object ZQueryConsulta: TZReadOnlyQuery
+    Connection = ZConPrincipal
+    Params = <>
+    Left = 144
+    Top = 48
+  end
+  object SourceConsulta: TDataSource
+    DataSet = ZQueryConsulta
+    Left = 144
+    Top = 192
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConPrincipal
+    Params = <>
+    DataSource = SourceDisciplina_Aluno
+    Left = 72
+    Top = 48
+  end
+  object SourceEdita: TDataSource
+    DataSet = ZQuery1
+    Left = 72
+    Top = 192
+  end
+end

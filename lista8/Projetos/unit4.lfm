@@ -1,0 +1,211 @@
+object FormFuncionario: TFormFuncionario
+  Left = 291
+  Height = 467
+  Top = 250
+  Width = 577
+  Caption = 'Funcionário'
+  ClientHeight = 467
+  ClientWidth = 577
+  OnActivate = FormActivate
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 279
+    Width = 577
+    Align = alBottom
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 577
+    DataSource = DataModule1.DataSourceFunc
+    OnClick = DBNavigator1Click
+    Options = []
+    TabOrder = 0
+  end
+  object DBEdit1: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 24
+    Width = 80
+    DataField = 'id_funcionario'
+    DataSource = DataModule1.DataSourceFunc
+    ReadOnly = True
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 72
+    Width = 224
+    DataField = 'nome_funcionario'
+    DataSource = DataModule1.DataSourceFunc
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 24
+    Width = 17
+    Caption = 'ID :'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 72
+    Width = 36
+    Caption = 'Nome:'
+    ParentColor = False
+  end
+  object DBEdit3: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 120
+    Width = 24
+    DataField = 'sexo'
+    DataSource = DataModule1.DataSourceFunc
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 120
+    Width = 28
+    Caption = 'Sexo:'
+    ParentColor = False
+  end
+  object DBEdit4: TDBEdit
+    Left = 104
+    Height = 23
+    Top = 168
+    Width = 120
+    DataField = 'salario'
+    DataSource = DataModule1.DataSourceFunc
+    Alignment = taRightJustify
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 168
+    Width = 38
+    Caption = 'Salario:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 224
+    Width = 79
+    Caption = 'Departamento:'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 104
+    Height = 23
+    Top = 224
+    Width = 100
+    DataField = 'id_departamento'
+    DataSource = DataModule1.DataSourceFunc
+    KeyField = 'id_departamento'
+    ListField = 'id_departamento'
+    ListFieldIndex = 0
+    ListSource = DataModule1.DataSourceDep
+    LookupCache = False
+    TabOrder = 5
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 163
+    Top = 304
+    Width = 577
+    Align = alBottom
+    Caption = 'Projetos realizados'
+    ClientHeight = 143
+    ClientWidth = 573
+    TabOrder = 6
+    object DBGrid2: TDBGrid
+      Left = 0
+      Height = 143
+      Top = 0
+      Width = 520
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'ID'
+          Width = 34
+          FieldName = 'id_projeto'
+        end      
+        item
+          Title.Caption = 'Horas trabalhadas'
+          Width = 110
+          FieldName = 'horas_trabalhadas'
+        end>
+      DataSource = DataModule1.DataSourceProjFunc
+      TabOrder = 0
+    end
+    object DBNavigator2: TDBNavigator
+      Left = 520
+      Height = 143
+      Top = 0
+      Width = 53
+      Align = alRight
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclTopToBottomThenLeftToRight
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 143
+      ClientWidth = 53
+      DataSource = DataModule1.DataSourceProjFunc
+      Direction = nbdVertical
+      Options = []
+      TabOrder = 1
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 272
+    Height = 132
+    Top = 112
+    Width = 304
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        Width = 36
+      end    
+      item
+        Title.Caption = 'Descrição'
+        Width = 230
+      end>
+    DataSource = DataModule1.SourceConsulta1
+    TabOrder = 7
+  end
+  object Label6: TLabel
+    Left = 400
+    Height = 17
+    Top = 89
+    Width = 147
+    Caption = 'Projetos supervisionados'
+    Font.Height = -13
+    ParentColor = False
+    ParentFont = False
+  end
+end

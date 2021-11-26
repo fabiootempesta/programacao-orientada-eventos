@@ -1,0 +1,112 @@
+object DataModule1: TDataModule1
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 258
+  HorizontalOffset = 291
+  VerticalOffset = 250
+  Width = 994
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Port = 0
+    Database = 'D:\EngComp\Primavera\POE\lista8\Projetos\projetos.db'
+    Protocol = 'sqlite-3'
+    Left = 24
+    Top = 65
+  end
+  object ZTableDepartamento: TZTable
+    Connection = ZConnection1
+    TableName = 'departamento'
+    Left = 512
+    Top = 65
+  end
+  object ZTableFunc: TZTable
+    Connection = ZConnection1
+    TableName = 'funcionario'
+    Left = 612
+    Top = 65
+  end
+  object ZTableProj: TZTable
+    Connection = ZConnection1
+    TableName = 'projeto'
+    Left = 716
+    Top = 65
+  end
+  object ZTableProjFunc: TZTable
+    Connection = ZConnection1
+    TableName = 'projeto_funcionario'
+    MasterFields = 'id_funcionario'
+    MasterSource = DataSourceFunc
+    LinkedFields = 'id_funcionario'
+    Left = 828
+    Top = 65
+  end
+  object DataSourceDep: TDataSource
+    DataSet = ZTableDepartamento
+    Left = 512
+    Top = 160
+  end
+  object DataSourceFunc: TDataSource
+    DataSet = ZTableFunc
+    Left = 612
+    Top = 160
+  end
+  object DataSourceProj: TDataSource
+    DataSet = ZTableProj
+    Left = 716
+    Top = 160
+  end
+  object DataSourceProjFunc: TDataSource
+    DataSet = ZTableProjFunc
+    Left = 828
+    Top = 160
+  end
+  object ZQueryConsulta3: TZReadOnlyQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 304
+    Top = 65
+  end
+  object ZQueryConsulta2: TZReadOnlyQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 216
+    Top = 65
+  end
+  object ZQueryConsulta1: TZReadOnlyQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 120
+    Top = 65
+  end
+  object ZQueryConsulta4: TZReadOnlyQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 400
+    Top = 65
+  end
+  object SourceConsulta1: TDataSource
+    DataSet = ZQueryConsulta1
+    Left = 120
+    Top = 160
+  end
+  object SourceConsulta2: TDataSource
+    DataSet = ZQueryConsulta2
+    Left = 216
+    Top = 160
+  end
+  object SourceConsulta3: TDataSource
+    DataSet = ZQueryConsulta3
+    Left = 304
+    Top = 160
+  end
+  object SourceConsulta4: TDataSource
+    DataSet = ZQueryConsulta4
+    Left = 400
+    Top = 160
+  end
+end
