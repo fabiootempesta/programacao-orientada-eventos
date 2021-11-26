@@ -1,0 +1,48 @@
+object Form1: TForm1
+  Left = 258
+  Height = 380
+  Top = 250
+  Width = 436
+  Caption = 'Form1'
+  ClientHeight = 380
+  ClientWidth = 436
+  OnActivate = FormActivate
+  object StringGrid1: TStringGrid
+    Left = 56
+    Height = 176
+    Top = 56
+    Width = 160
+    ColCount = 2
+    Columns = <    
+      item
+        ButtonStyle = cbsCheckboxColumn
+        Title.Caption = ' '
+      end    
+      item
+        ButtonStyle = cbsPickList
+        Title.Caption = 'Valor'
+      end>
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+    TabOrder = 0
+    OnCheckboxToggled = StringGrid1CheckboxToggled
+  end
+  object SpinEdit1: TSpinEdit
+    Left = 56
+    Height = 23
+    Top = 29
+    Width = 49
+    MinValue = 1
+    OnChange = SpinEdit1Change
+    TabOrder = 1
+    Value = 1
+  end
+  object Label1: TLabel
+    Left = 73
+    Height = 15
+    Top = 319
+    Width = 31
+    Caption = 'Total: '
+    ParentColor = False
+  end
+end
